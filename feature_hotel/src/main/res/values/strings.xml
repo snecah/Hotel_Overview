@@ -1,0 +1,10 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Hotel">Отель</string>
+    <string name="Excellent">5 Превосходно</string>
+    <string name="hotel_name">Hotel Name</string>
+    <string name="address">Madinat Makadi, Safaga Road, Makadi Bay, Египет</string>
+    <string name="price">от 134 673 ₽</string>
+    <string name="service_for_price">за тур с перелетом</string>
+</resources>
