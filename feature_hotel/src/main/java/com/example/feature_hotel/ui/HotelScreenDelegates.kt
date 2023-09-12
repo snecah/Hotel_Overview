@@ -1,6 +1,7 @@
 package com.example.feature_hotel.ui
 
 import com.bumptech.glide.Glide
+import com.example.core.ui.base.ListItem
 import com.example.feature_hotel.databinding.ItemHotelAboutBinding
 import com.example.feature_hotel.databinding.ItemHotelPriceBinding
 import com.example.feature_hotel.ui.model.HotelAboutItem

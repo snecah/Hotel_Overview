@@ -6,7 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.bumptech.glide.Glide
+import com.example.core.ui.base.ListItem
 import com.example.feature_hotel.R
 import com.example.feature_hotel.databinding.FragmentHotelBinding
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
@@ -17,9 +17,7 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
     private val viewModel by viewModels<HotelViewModel>()
     private val binding by viewBinding(FragmentHotelBinding::bind)
     private val adapter by lazy {
-        ListDelegationAdapter<List<ListItem>>(
-            HotelScreenDelegates.hotelPriceDelegate, HotelScreenDelegates.hotelAboutDelegate
-        )
+        HotelAdapter()
     }
 
 
@@ -35,7 +33,6 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
 
         viewModel.hotelData.observe(viewLifecycleOwner) {
             adapter.items = listOf(viewModel.hotelPriceItem, viewModel.hotelAbout)
-            adapter.notifyDataSetChanged()
         }
     }
 }

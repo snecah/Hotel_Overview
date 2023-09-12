@@ -1,6 +1,6 @@
 package com.example.feature_hotel.ui.model
 
-import com.example.feature_hotel.ui.ListItem
+import com.example.core.ui.base.ListItem
 
 data class HotelPriceItem(
     val name: String,
