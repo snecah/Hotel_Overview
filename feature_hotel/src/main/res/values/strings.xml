@@ -2,9 +2,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Hotel">Отель</string>
-    <string name="Excellent">5 Превосходно</string>
+    <string name="Excellent">Превосходно</string>
     <string name="hotel_name">Hotel Name</string>
     <string name="address">Madinat Makadi, Safaga Road, Makadi Bay, Египет</string>
     <string name="price">от 134 673 ₽</string>
     <string name="service_for_price">за тур с перелетом</string>
+    <string name="to_choose_room">К выбору номера</string>
+    <string name="five">5</string>
+    <string name="about">Об отеле</string>
+    <string name="line">3-я линия</string>
+    <string name="paid_wifi">Платный Wi-Fi в фойе</string>
+    <string name="km_airport">30 км до аэропорта</string>
+    <string name="km_beach">1 км до пляжа</string>
+    <string name="hotel_description">Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!</string>
 </resources>

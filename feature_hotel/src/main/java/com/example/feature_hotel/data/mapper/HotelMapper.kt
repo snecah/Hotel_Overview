@@ -1,15 +1,18 @@
 package com.example.feature_hotel.data.mapper
 
-import com.example.feature_hotel.data.model.HotelResponse
-import com.example.feature_hotel.domain.model.HotelOverview
+import com.example.feature_hotel.data.model.HotelOverview
+import com.example.feature_hotel.ui.model.HotelAboutItem
+import com.example.feature_hotel.ui.model.HotelPriceItem
 
-fun HotelResponse.toDomainModel() = HotelOverview(
-    aboutTheHotel = aboutTheHotel,
-    address = address,
-    imageUrls = imageUrls,
-    minimalPrice = minimalPrice,
+fun HotelOverview.toHotelAboutItem() = HotelAboutItem(
+    aboutTheHotel = aboutTheHotel
+)
+
+fun HotelOverview.toHotelPriceItem() = HotelPriceItem(
     name = name,
-    priceForIt = priceForIt,
+    address = address,
     rating = rating,
-    ratingName = ratingName
+    ratingName = ratingName,
+    imageUrls = imageUrls,
+    minimalPrice = minimalPrice
 )

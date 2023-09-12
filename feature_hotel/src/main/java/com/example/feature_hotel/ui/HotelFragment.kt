@@ -9,12 +9,18 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bumptech.glide.Glide
 import com.example.feature_hotel.R
 import com.example.feature_hotel.databinding.FragmentHotelBinding
+import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HotelFragment : Fragment(R.layout.fragment_hotel) {
     private val viewModel by viewModels<HotelViewModel>()
     private val binding by viewBinding(FragmentHotelBinding::bind)
+    private val adapter by lazy {
+        ListDelegationAdapter<List<ListItem>>(
+            HotelScreenDelegates.hotelPriceDelegate, HotelScreenDelegates.hotelAboutDelegate
+        )
+    }
 
 
     override fun onAttach(context: Context) {
@@ -23,18 +29,13 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
     }
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.recyclerView.adapter = adapter
 
-        viewModel.hotelData.observe(viewLifecycleOwner) {hotel ->
-            with(binding) {
-                hotelNameText.text = hotel.name
-                hotelAddressText.text = hotel.address
-                Glide.with(requireContext()).load(hotel.imageUrls[0]).into(viewPager)
-            }
+        viewModel.hotelData.observe(viewLifecycleOwner) {
+            adapter.items = listOf(viewModel.hotelPriceItem, viewModel.hotelAbout)
+            adapter.notifyDataSetChanged()
         }
-
     }
-
 }

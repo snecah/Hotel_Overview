@@ -4,8 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.feature_hotel.data.mapper.toHotelAboutItem
+import com.example.feature_hotel.data.mapper.toHotelPriceItem
 import com.example.feature_hotel.data.repository.HotelRepositoryImpl
-import com.example.feature_hotel.domain.model.HotelOverview
+import com.example.feature_hotel.data.model.HotelOverview
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,6 +18,8 @@ class HotelViewModel @Inject constructor(private val repository: HotelRepository
 
     private val _hotelData = MutableLiveData<HotelOverview>()
     val hotelData: LiveData<HotelOverview> get() = _hotelData
+    val hotelAbout get() = _hotelData.value?.toHotelAboutItem() as ListItem
+    val hotelPriceItem get() =  _hotelData.value?.toHotelPriceItem() as ListItem
 
     fun getHotelOverview() {
         viewModelScope.launch {

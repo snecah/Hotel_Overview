@@ -1,8 +1,9 @@
 package com.example.feature_hotel.data.model
 
+import com.example.feature_hotel.data.model.AboutTheHotel
 import com.google.gson.annotations.SerializedName
 
-data class HotelResponse(
+data class HotelOverview(
     @SerializedName("about_the_hotel")
     val aboutTheHotel: AboutTheHotel,
     @SerializedName("adress")
