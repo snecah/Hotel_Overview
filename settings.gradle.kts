@@ -17,3 +17,4 @@ rootProject.name = "Hotel Overview"
 include(":app")
 include(":core")
 include(":feature_hotel")
+include(":feature_room")

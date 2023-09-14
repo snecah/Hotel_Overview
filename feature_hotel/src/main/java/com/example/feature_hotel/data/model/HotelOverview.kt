@@ -1,6 +1,5 @@
 package com.example.feature_hotel.data.model
 
-import com.example.feature_hotel.data.model.AboutTheHotel
 import com.google.gson.annotations.SerializedName
 
 data class HotelOverview(

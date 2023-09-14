@@ -1,10 +1,11 @@
 package com.example.feature_hotel.ui
 
-import com.bumptech.glide.Glide
 import com.example.core.ui.base.ListItem
 import com.example.feature_hotel.databinding.ItemHotelAboutBinding
+import com.example.feature_hotel.databinding.ItemHotelIncludedBinding
 import com.example.feature_hotel.databinding.ItemHotelPriceBinding
 import com.example.feature_hotel.ui.model.HotelAboutItem
+import com.example.feature_hotel.ui.model.HotelIncludedItem
 import com.example.feature_hotel.ui.model.HotelPriceItem
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
@@ -14,13 +15,16 @@ object HotelScreenDelegates {
             { inflater, container -> ItemHotelPriceBinding.inflate(inflater, container, false) }
         ) {
             bind {
+
+                val viewPagerAdapter = ViewPagerAdapter(item.imageUrls)
+
                 with(binding) {
+                    viewPager.adapter = viewPagerAdapter
                     hotelNameText.text = item.name
                     hotelAddressText.text = item.address
-                    priceText.text = item.minimalPrice.toString()
+                    priceNumberText.text = item.minimalPrice.toString()
                     ratingNumber.text = item.rating.toString()
                     ratingNameText.text = item.ratingName
-                    Glide.with(context).load(item.imageUrls[0]).into(viewPager)
                 }
             }
         }
@@ -33,4 +37,15 @@ object HotelScreenDelegates {
             }
         }
 
+    val hotelIncludedDelegate =
+        adapterDelegateViewBinding<HotelIncludedItem, ListItem, ItemHotelIncludedBinding>(
+            { inflater, container -> ItemHotelIncludedBinding.inflate(inflater, container, false) }
+        ) {
+            bind {
+                with(binding) {
+                    facilitiesText.text = item.name
+                    facilityImage.setImageResource(item.resourceImgId)
+                }
+            }
+        }
 }

@@ -8,5 +8,6 @@ class HotelAdapter : AsyncListDifferDelegationAdapter<ListItem>(BaseDiffUtilItem
     init {
         delegatesManager.addDelegate(HotelScreenDelegates.hotelPriceDelegate)
             .addDelegate(HotelScreenDelegates.hotelAboutDelegate)
+            .addDelegate(HotelScreenDelegates.hotelIncludedDelegate)
     }
 }
