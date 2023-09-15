@@ -1,16 +1,16 @@
-package com.example.feature_hotel.ui
+package com.example.core.ui.base.ViewPagerAdapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.example.feature_hotel.databinding.ImageItemBinding
+import com.example.core.databinding.ItemImageBinding
 
 class ViewPagerAdapter(private val imageUrlList: List<String>) :
     RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder>() {
 
-    inner class ViewPagerViewHolder(private val binding: ImageItemBinding) :
+    inner class ViewPagerViewHolder(private val binding: ItemImageBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun setData(imageUrl: String) {
@@ -27,7 +27,7 @@ class ViewPagerAdapter(private val imageUrlList: List<String>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerViewHolder {
 
-        val binding = ImageItemBinding.inflate(
+        val binding = ItemImageBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false

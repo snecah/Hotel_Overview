@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="257dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/room_description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="top"
+        android:text="@string/room_description"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/view_pager"
+        app:layout_constraintStart_toStartOf="@id/view_pager"
+        app:layout_constraintTop_toBottomOf="@id/view_pager" />
+
+    <TextView
+        android:id="@+id/peculiarity1_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/grey_light"
+        android:gravity="center_horizontal"
+        android:padding="3dp"
+        android:text="Все включено"
+        android:textColor="@color/grey"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="@id/room_description_text"
+        app:layout_constraintTop_toBottomOf="@id/room_description_text" />
+
+    <TextView
+        android:id="@+id/peculiarity2_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@color/grey_light"
+        android:gravity="center_horizontal"
+        android:padding="3dp"
+        android:text="@string/conditioner"
+        android:textColor="@color/grey"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="@+id/peculiarity1_text"
+        app:layout_constraintStart_toEndOf="@id/peculiarity1_text"
+        app:layout_constraintTop_toTopOf="@id/peculiarity1_text" />
+
+    <TextView
+        android:id="@+id/peculiarity3_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/grey_light"
+        android:gravity="center_horizontal"
+        android:padding="3dp"
+        android:text="@string/pool"
+        android:textColor="@color/grey"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="@id/peculiarity1_text"
+        app:layout_constraintTop_toBottomOf="@id/peculiarity1_text" />
+
+    <LinearLayout
+        android:id="@+id/more_info_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/blue_light"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/peculiarity3_text"
+        app:layout_constraintTop_toBottomOf="@id/peculiarity3_text">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/room_details"
+            android:textColor="@color/blue"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:padding="10dp"
+            android:src="@drawable/blue_arrow" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/price_number_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:paddingTop="10dp"
+        android:text="@string/price"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/more_info_container"
+        app:layout_constraintTop_toBottomOf="@id/more_info_container" />
+
+
+    <TextView
+        android:id="@+id/price_for_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/service_for_price"
+        android:textColor="@color/grey"
+        android:textSize="19sp"
+        app:layout_constraintStart_toEndOf="@id/price_number_text"
+        app:layout_constraintTop_toTopOf="@id/price_number_text" />
+
+
+    <Button
+        android:id="@+id/choose_room_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_background"
+        android:text="@string/choose_room"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/price_number_text" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

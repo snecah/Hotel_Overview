@@ -1,4 +1,4 @@
-package com.example.core
+package com.example.core.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

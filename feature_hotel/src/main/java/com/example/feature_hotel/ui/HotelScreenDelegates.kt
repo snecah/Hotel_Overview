@@ -1,6 +1,7 @@
 package com.example.feature_hotel.ui
 
 import com.example.core.ui.base.ListItem
+import com.example.core.ui.base.ViewPagerAdapter.ViewPagerAdapter
 import com.example.feature_hotel.databinding.ItemHotelAboutBinding
 import com.example.feature_hotel.databinding.ItemHotelIncludedBinding
 import com.example.feature_hotel.databinding.ItemHotelPriceBinding
@@ -13,13 +14,14 @@ object HotelScreenDelegates {
     val hotelPriceDelegate =
         adapterDelegateViewBinding<HotelPriceItem, ListItem, ItemHotelPriceBinding>(
             { inflater, container -> ItemHotelPriceBinding.inflate(inflater, container, false) }
-        ) {
+        )
+        {
             bind {
 
-                val viewPagerAdapter = ViewPagerAdapter(item.imageUrls)
+                val hotelViewPagerAdapter = ViewPagerAdapter(item.imageUrls)
 
                 with(binding) {
-                    viewPager.adapter = viewPagerAdapter
+                    viewPager.adapter = hotelViewPagerAdapter
                     hotelNameText.text = item.name
                     hotelAddressText.text = item.address
                     priceNumberText.text = item.minimalPrice.toString()

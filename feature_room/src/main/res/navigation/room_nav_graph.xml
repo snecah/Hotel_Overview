@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/room_nav_graph"
+    app:startDestination="@id/roomsFragment">
+
+    <fragment
+        android:id="@+id/roomsFragment"
+        android:name="com.example.feature_room.ui.RoomsFragment"
+        android:label="fragment_rooms"
+        tools:layout="@layout/fragment_rooms" >
+
+        <deepLink app:uri="android-app://com.sneach.HotelOverview.rooms/rooms_fragment"/>
+
+    </fragment>
+</navigation>

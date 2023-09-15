@@ -9,5 +9,7 @@
         android:id="@+id/hotelFragment"
         android:name="com.example.feature_hotel.ui.HotelFragment"
         android:label="fragment_hotel"
-        tools:layout="@layout/fragment_hotel" />
+        tools:layout="@layout/fragment_hotel" >
+    </fragment>
+
 </navigation>
